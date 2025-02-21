@@ -5,7 +5,7 @@ from pydantic import BaseModel, EmailStr, StringConstraints
 
 from requests_enum import RequestType
 
-NameType = Annotated[str, StringConstraints(min_length=2, max_length=50, pattern=r"^[A-Za-zА-Яа-яЁё\s-]+$")]
+NameType = Annotated[str, StringConstraints(min_length=2, max_length=50, pattern=r"^[A-ZА-ЯЁ][a-zа-яё\s-]*$")]
 PhoneType = Annotated[str, StringConstraints(pattern=r"^\+?\d{1,15}$")]
 
 

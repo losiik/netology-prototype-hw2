@@ -13,7 +13,7 @@ REPORTS_FILE = "reports.json"
 
 def save(report: Report):
     with open(REPORTS_FILE, "a", encoding="utf-8") as file:
-        json.dump(report.json(), file, ensure_ascii=False, indent=5)
+        file.write(json.dumps(report.json(), ensure_ascii=False, indent=5) + "\n")
 
 
 @report_router.post("/", response_model=dict[str, str])
